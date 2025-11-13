@@ -15,10 +15,6 @@ async function fetchAPIAStore(){
     });
 
     await obj.save().catch((err) => {console.log(err)});
-    console.log(data);
-    console.log(obj);
-    console.log(obj.timestamp);
-    console.log(obj.temperature);
 }
 
 export default { fetchAPIAStore };
