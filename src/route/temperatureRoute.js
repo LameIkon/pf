@@ -14,7 +14,9 @@ router.get('/', async (req, res) => {
             temperature: temperatureRecording.temperature
         }));
         console.log(temperatureJson);
-        res.json(temperatureJson);
+
+        res.status(200).json(temperatureJson);
+
     }
     catch(err){}
 
