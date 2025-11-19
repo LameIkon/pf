@@ -17,15 +17,8 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/temp", tempRouter);
 
-setInterval(tempSaver.fetchAPIAStore, 5000)
-//tempSaver.fetchAPIAStore().catch((err) => {console.log("Could not fetch temperature and store data")});
+tempSaver.fetchAPIAStore().catch((err) => {console.log("Could not fetch temperature and store data")});
+
+setInterval(tempSaver.fetchAPIAStore, 10000)
 
 app.listen("3000");
-/*
-import TemperatureOdense from "./src/model/temperatureOdense.js";
-const TempObj = mongoose.model("Temperature", TemperatureOdense);
-const Obj = mongoose.model("Temperature", TempObj);
-const TemperObj = new TempObj();
-const objs = await Obj.find();
-console.log(objs);
-*/
