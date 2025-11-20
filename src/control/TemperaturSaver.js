@@ -7,9 +7,9 @@ async function fetchAPIAStore(){
     //const url = "https://api.open-meteo.com/v1/forecast?timezone=Europe%2FBerlin&latitude=55.3959&longitude=10.3883&current=temperature_2m";
     const url = "http://localhost:3500/api/temp/";
     const response = await fetch(url);
-    let data = await response.json();
+    const data = await response.json();
 
-    let obj = new TempObj({
+    const obj = new TempObj({
         timestamp: data.current.time,
         temperature: data.current.temperature_2m
     });

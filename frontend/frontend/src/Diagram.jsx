@@ -5,9 +5,9 @@ function Diagram(){
     useEffect(() => {dataJson()}, []);
     const dataJson = async() => {
         const data = await fetch("http://localhost:3000/api/temp/", {method: "GET", headers: {"Content-Type": "application/json"}});
-        const dataJson2 = await data.json();
-        console.log(dataJson2);
-        setDataPoints((prevState) => [...prevState, dataJson2]);
+        const dataJson = await data.json();
+        console.log(dataJson);
+        setDataPoints((prevState) => [...prevState, dataJson]);
         console.log(dataPoints);
     }
     return (

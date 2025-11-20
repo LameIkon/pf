@@ -19,6 +19,6 @@ app.use("/api/temp", tempRouter);
 
 tempSaver.fetchAPIAStore().catch((err) => {console.log("Could not fetch temperature and store data")});
 
-setInterval(tempSaver.fetchAPIAStore, 10000)
+setInterval(tempSaver.fetchAPIAStore, 10000); // long polling, should be 15 min, as this is the time it takes for the API to update.
 
 app.listen("3000");
