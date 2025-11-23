@@ -10,4 +10,4 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/temp", tempRouter);
 
-app.listen("3500");
+app.listen("3000");
