@@ -17,12 +17,12 @@ function Diagram(){
 
         if (newPoints.length === 0) return prev; // no new data, do nothing
 
-        const updated = [...prev, ...dataJson];
+        const updated = [...prev, ...newPoints];
 
         // create new arrays based on updated
         const newTime = updated.map(e => e.timestamp);
-        const newTemps = updated.map(e => e.temperature);
-
+        const newTemps = updated.map(e => e.temperature);       
+        
         // update new states
         setTime(newTime);
         setTemps(newTemps);
@@ -34,44 +34,43 @@ function Diagram(){
     useEffect(() => {
         dataJson(); // initial fetch
         const interval = setInterval(dataJson, 10000); // fetch every 10s
+        
+
         return () => clearInterval(interval);
     }, []);
     
 
     const LineChart = () => {
-
+        
         const options = {
-        responsive: true,
-        plugins: {
-        legend: {
-            position: "top",
-        },
+            responsive: true,
+            plugins:    {
+                legend: {
+                    position: "top",
+                },
 
-        title: {
+                title: {
 
-        display: true,
-        text: "Line Chart: Monthly Sales Trend for Products A & B",
-        },
-        },
+                    display: true,
+                    text: "Temperature in Odense",
+                },
+            },
         }
 
 
         const data = {
 
-        labels: time,
+            labels: time,
+        
+            datasets: [
 
-        datasets: [
-
-        {
-
-        label: "Temperature",
-        data: temps,
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132)",
-      },
-
-
-        ],
+                {
+                    label: "Temperature",
+                    data: temps,
+                    borderColor: "rgb(255, 99, 132)",
+                    backgroundColor: "rgba(255, 99, 132)",
+                },
+             ],
         }
 
         return <Line options={options} data={data} />

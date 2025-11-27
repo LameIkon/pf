@@ -15,7 +15,7 @@ async function fetchAPIAStore(){
     
 
     await obj.save().catch((err) => {console.log(err)});
-    console.log(obj);
+    //console.log(obj);
 }
 
 export default { fetchAPIAStore };

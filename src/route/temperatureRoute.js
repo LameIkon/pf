@@ -8,12 +8,12 @@ const router = express.Router();
 router.get('/', async (req, res) => {
     try{
         const databaseValues = await TempObj.find();
-        console.log(databaseValues);
+        //console.log(databaseValues);
         const temperatureJson = databaseValues.map((temperatureRecording)=> ({
             timestamp: new Date((temperatureRecording.timestamp)),
             temperature: temperatureRecording.temperature
         }));
-        console.log(temperatureJson);
+        // console.log(temperatureJson);
 
         res.status(200).json(temperatureJson);
 
