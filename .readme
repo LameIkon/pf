@@ -1,0 +1,6 @@
+# pf opgave lavet af Troels J. Hansen og Jonas V. Linnemann
+
+For at køre main server skal du være i root folder i det her tilfælde pf. Også i terminalen: node main-server.js
+For at køre frontend skal du være i ...\frontend\frontend og så i terminalen: npm run dev
+I videoen kommer det nye datapunkt 17 sekunder inde i videon. (vidoen lægger i mappen pf)
+
